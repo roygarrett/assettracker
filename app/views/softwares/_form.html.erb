@@ -1,0 +1,11 @@
+
+<%= simple_form_for software do |form| %>
+  <%= form.input :name %>
+
+  <%= form.input :license_count %>
+
+  <%= form.association :employees, label_method: :full_name, as: :check_boxes %>
+
+  <%= form.submit :class => "btn btn-primary" %>
+
+<% end %>

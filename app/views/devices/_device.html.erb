@@ -1,0 +1,21 @@
+<div id="<%= dom_id device %>">
+  <p>
+    <strong>Name:</strong>
+    <%= device.name %>
+  </p>
+
+  <p>
+    <strong>Manufacturer:</strong>
+    <%= device.manufacturer %>
+  </p>
+
+  <p>
+    <strong>Category:</strong>
+    <%= device.category %>
+  </p>
+
+  <p>
+    <strong>Assigned to:</strong>
+    <%= link_to device.employee.full_name, employee_path(device.employee) %>
+  </p>
+</div>

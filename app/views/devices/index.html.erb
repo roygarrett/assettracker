@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Devices</h1>
+
+<div id="devices">
+  <% @devices.each do |device| %>
+    <div class="card">
+      <%= render device %>
+      <p>
+        <%= link_to "Show this device", device %>
+      </p>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "New device", new_device_path %>
