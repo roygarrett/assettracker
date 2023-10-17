@@ -2,8 +2,8 @@
 <%= simple_form_for device do |form| %>
   
   <%= form.input :name %>
-  <%= form.input :manufacturer %>
-  <%= form.input :category %>
-  <%= form.association :employee, label_method: :full_name, as: :radio_buttons %>  
+  <%= form.association :manufacturer, label_method: :name %>
+  <%= form.association :category, label_method: :name %>
+  <%= form.association :employee, label_method: :full_name %>  
   <%= form.submit :class => "btn btn-primary" %>
 <% end %>

@@ -5,17 +5,19 @@
   </p>
 
   <p>
-    <strong>Manufacturer:</strong>
-    <%= device.manufacturer %>
+  <strong>Manufacturer:</strong>
+    <%= device.manufacturer.name %>
   </p>
 
   <p>
     <strong>Category:</strong>
-    <%= device.category %>
+    <%= device.category.name %>
   </p>
 
   <p>
-    <strong>Assigned to:</strong>
+  <strong>Assigned to:</strong>
+  <% if device.employee.present? %>
     <%= link_to device.employee.full_name, employee_path(device.employee) %>
+  <% end %>
   </p>
 </div>
