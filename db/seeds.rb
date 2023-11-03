@@ -39,17 +39,24 @@ for num in 1..5
   })
 end
 
-#Create two devices for each employee, one for the first two categories and manufacturers
-Category.all.zip(Manufacturer.all).each_with_index do |(cat, man), index|
-  break if index >= 2
-  Employee.all.zip(1..5).each do |emp, num|
-    Device.create({
-      :name => "#{cat.name} #{num}",
-      :employee => emp,
-      :category => cat,
-      :manufacturer => man
-    })
+#Create three devices one for each category and manufacturer
+Category.all.each do |cat|
+  Manufacturer.all.each do |man|
+    3.times do
+      Device.create({
+        :name => "Device #{rand(1..100)}",
+        :category => cat,
+        :manufacturer => man
+      })
+    end 
   end
+end
+
+#Add 3 unassigned devices to each employee
+3.times do
+  Employee.all.each do |emp|
+    emp.devices << Device.all.where(employee_id: nil).sample
+  end 
 end
 
 #Create default softwares with random software counts

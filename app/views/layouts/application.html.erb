@@ -14,7 +14,7 @@
 
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
+      <div class="container-fluid d-flex">
         <a class="navbar-brand" href="/">Asset Tracker</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -24,7 +24,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/">Dashboard</a>
             </li>
-              <a class="nav-link" href="/employees">Employees</a>
+            <a class="nav-link" href="/employees">Employees</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/devices">Devices</a>
@@ -33,7 +33,7 @@
               <a class="nav-link" href="/softwares">Software</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Other</a>
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Other </a>
               <ul class="dropdown-menu">
                 <li>
                   <a class="dropdown-item" href="/categories">Device Categories</a>
@@ -44,6 +44,10 @@
               </ul>
             </li>
           </ul>
+          <form class="d-flex" role="search" action="/search">
+            <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search" value="<%= @query %>">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
         </div>
       </div>
     </nav>

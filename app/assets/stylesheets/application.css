@@ -22,3 +22,8 @@
 fieldset legend { 
 	float: none;
 }
+
+#navbarNav {
+	display: flex;
+	justify-content: space-between;
+}
